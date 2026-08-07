@@ -1,12 +1,12 @@
 # Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
 
-pkgname=voidbr-pkgname
-pkgdesc="Package template for VoidLinuxBR"
+pkgname=voidbr-base-common
+pkgdesc="VoidBR TTY Meta Package"
 pkgver=$(date +%Y%m%d)
 pkgrel=$(date +%H%M)
-provides=()               # "eu SOU o $pkgname pkg1, pra quem depender deles"
-replaces=()               # "remove o pkg1 pkg2 antigo automaticamente quando eu instalar"
-conflicts=()              # "nunca me deixe coexistir com o pkg1 pkg2 original"
+provides=()  # "eu SOU o $pkgname pkg1, pra quem depender deles"
+replaces=()  # "remove o pkg1 pkg2 antigo automaticamente quando eu instalar"
+conflicts=() # "nunca me deixe coexistir com o pkg1 pkg2 original"
 arch=('any')
 license=('MIT')
 #url="ssh://git@github.com/voidlinuxbr/${pkgname}"
@@ -14,24 +14,65 @@ url="https://github.com/voidlinuxbr/${pkgname}"
 source=("git+${url}.git")
 md5sums=('SKIP')
 makedepends=()
-depends=()
+depends=(
+	7zip                    # Compactador 7z (CLI)
+	acpi                    # Info de bateria/térmica (CLI)
+	acpid                   # Daemon ACPI
+	alsa-pipewire           # ALSA sobre PipeWire
+	alsa-plugins-pulseaudio # Plugin ALSA/PulseAudio
+	alsa-utils              # Utilitários ALSA
+	brightnessctl           # Controle de brilho (CLI)
+	cpupower                # Gerenciamento de CPU (CLI)
+	dbus-elogind            # Message bus system (variante elogind)
+	elogind                 # Gerenciador de login e sessões
+	ffmpeg                  # Manipulação de áudio/vídeo (CLI)
+	fuse-exfat              # Suporte a exFAT (driver)
+	gnome-keyring           # Gerenciador de senhas (daemon)
+	gst-plugins-bad1        # Codecs GStreamer
+	gst-plugins-base1       # Codecs GStreamer (base)
+	gst-plugins-good1       # Codecs GStreamer
+	gst-plugins-ugly1       # Codecs GStreamer (restrito)
+	gvfs                    # Sistema de arquivos virtual (daemon)
+	gvfs-cdda               # gvfs para CDs de áudio
+	gvfs-smb                # gvfs para SMB/Windows
+	htop                    # Monitor de processos (TUI)
+	inetutils               # Utilitários de rede (CLI)
+	iputils                 # Utilitários de rede/ping (CLI)
+	iw                      # Configuração de dispositivos wireless (CLI)
+	jq                      # Processador JSON (CLI)
+	libjack-pipewire        # JACK sobre PipeWire
+	libspa-bluetooth        # Bluetooth para PipeWire
+	lm_sensors              # Sensores de temperatura (CLI)
+	lua55                   # Linguagem de script (runtime)
+	NetworkManager          # Gerenciador de rede (daemon)
+	optipng                 # Compressor PNG (CLI)
+	p7zip                   # Suporte extra a compactados (CLI)
+	pipewire                # Servidor de áudio (daemon)
+	playerctl               # Controle MPRIS de mídia (CLI)
+	polkit-elogind          # Daemon de autorização de privilégios
+	psmisc                  # Utilitários de processo (CLI)
+	pulseaudio              # Servidor de áudio (daemon)
+	pulseaudio-utils        # Utilitários CLI PulseAudio
+	rtkit                   # Prioridade de tempo real (daemon)
+	sassc                   # Compilador SASS (CLI)
+	voidbr-base-config      # Configuração base (arquivos)
+	voidbr-nano-config      # Configuração do nano (arquivos)
+	voidbr-utils            # Utilitários gerais VoidLinuxBR (CLI)
+  chili-utils
+	wireless_tools          # Ferramentas legadas de wireless (CLI)
+	wireplumber             # Sessão PipeWire (daemon)
+	wpa_supplicant          # Autenticação WPA/WPA2 (daemon)
+)
 backup=()
-
-# Automatically detect and use the correct install file
-if [ -e "${pkgname}.install" ]; then
-	install=${pkgname}.install
-elif [ -e "pkgbuild.install" ]; then
-	install=pkgfile.install
-fi
 
 package() {
 	# Verify default folder
-  if [ -d "${srcdir}/${pkgname}/${pkgname}" ]; then
+	if [ -d "${srcdir}/${pkgname}/${pkgname}" ]; then
 		InternalDir="${srcdir}/${pkgname}/${pkgname}"
-  elif [ -d "${srcdir}/${pkgname}" ]; then
+	elif [ -d "${srcdir}/${pkgname}" ]; then
 		InternalDir="${srcdir}/${pkgname}"
 	else
-    #local
+		#local
 		InternalDir="${WORKDIR}"
 	fi
 

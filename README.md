@@ -1,3 +1,3 @@
-# voidbr-pkgfile
+# voidbr-base-common
 
-Template for VoidBR pkgmake/pkgfile packages
+VoidBR TTY Meta Package
