@@ -21,47 +21,99 @@ depends=(
 	alsa-pipewire           # ALSA sobre PipeWire
 	alsa-plugins-pulseaudio # Plugin ALSA/PulseAudio
 	alsa-utils              # Utilitários ALSA
-	brightnessctl           # Controle de brilho (CLI)
-	cpupower                # Gerenciamento de CPU (CLI)
-	dbus-elogind            # Message bus system (variante elogind)
-	elogind                 # Gerenciador de login e sessões
-	ffmpeg                  # Manipulação de áudio/vídeo (CLI)
-	fuse-exfat              # Suporte a exFAT (driver)
-	gnome-keyring           # Gerenciador de senhas (daemon)
-	gst-plugins-bad1        # Codecs GStreamer
-	gst-plugins-base1       # Codecs GStreamer (base)
-	gst-plugins-good1       # Codecs GStreamer
-	gst-plugins-ugly1       # Codecs GStreamer (restrito)
-	gvfs                    # Sistema de arquivos virtual (daemon)
-	gvfs-cdda               # gvfs para CDs de áudio
-	gvfs-smb                # gvfs para SMB/Windows
-	htop                    # Monitor de processos (TUI)
-	inetutils               # Utilitários de rede (CLI)
-	iputils                 # Utilitários de rede/ping (CLI)
-	iw                      # Configuração de dispositivos wireless (CLI)
-	jq                      # Processador JSON (CLI)
-	libjack-pipewire        # JACK sobre PipeWire
-	libspa-bluetooth        # Bluetooth para PipeWire
-	lm_sensors              # Sensores de temperatura (CLI)
-	lua55                   # Linguagem de script (runtime)
-	NetworkManager          # Gerenciador de rede (daemon)
-	optipng                 # Compressor PNG (CLI)
-	p7zip                   # Suporte extra a compactados (CLI)
-	pipewire                # Servidor de áudio (daemon)
-	playerctl               # Controle MPRIS de mídia (CLI)
-	polkit-elogind          # Daemon de autorização de privilégios
-	psmisc                  # Utilitários de processo (CLI)
-	pulseaudio              # Servidor de áudio (daemon)
-	pulseaudio-utils        # Utilitários CLI PulseAudio
-	rtkit                   # Prioridade de tempo real (daemon)
-	sassc                   # Compilador SASS (CLI)
-	voidbr-base-config      # Configuração base (arquivos)
-	voidbr-nano-config      # Configuração do nano (arquivos)
-	voidbr-utils            # Utilitários gerais VoidLinuxBR (CLI)
-  chili-utils
-	wireless_tools          # Ferramentas legadas de wireless (CLI)
-	wireplumber             # Sessão PipeWire (daemon)
-	wpa_supplicant          # Autenticação WPA/WPA2 (daemon)
+	bash-completion
+	bc
+	binutils
+	brightnessctl # Controle de brilho (CLI)
+	chili-clonedisk
+	chili-utils
+	chrony
+	cpupower # Gerenciamento de CPU (CLI)
+	cryptsetup
+	curl
+	dbus
+	dbus-elogind # Message bus system (variante elogind)
+	dhcpcd
+	dialog
+	dracut
+	duf
+	efivar
+	elogind # Gerenciador de login e sessões
+	eza
+	fastfetch
+	ffmpeg     # Manipulação de áudio/vídeo (CLI)
+	fuse-exfat # Suporte a exFAT (driver)
+	fzf
+	gettext
+	gnome-keyring # Gerenciador de senhas (daemon)
+	grep
+	grub-btrfs-runit
+	grub-i386-efi
+	grub-terminus
+	grub-utils
+	gst-plugins-bad1  # Codecs GStreamer
+	gst-plugins-base1 # Codecs GStreamer (base)
+	gst-plugins-good1 # Codecs GStreamer
+	gst-plugins-ugly1 # Codecs GStreamer (restrito)
+	gvfs              # Sistema de arquivos virtual (daemon)
+	gvfs-cdda         # gvfs para CDs de áudio
+	gvfs-smb          # gvfs para SMB/Windows
+	htop              # Monitor de processos (TUI)
+	inetutils         # Utilitários de rede (CLI)
+	intel-ucode
+	iptables
+	iputils # Utilitários de rede/ping (CLI)
+	iw      # Configuração de dispositivos wireless (CLI)
+	iwd
+	jfsutils
+	jq               # Processador JSON (CLI)
+	libjack-pipewire # JACK sobre PipeWire
+	libspa-bluetooth # Bluetooth para PipeWire
+	linux-firmware
+	linux-firmware-amd
+	linux-firmware-intel
+	linux-firmware-network
+	lm_sensors # Sensores de temperatura (CLI)
+	lua55      # Linguagem de script (runtime)
+	lvm2
+	nano
+	NetworkManager # Gerenciador de rede (daemon)
+	nvme-cli
+	optipng # Compressor PNG (CLI)
+	p7zip   # Suporte extra a compactados (CLI)
+	parallel
+	parted
+	pasystray
+	pavucontrol
+	pigz
+	pipewire         # Servidor de áudio (daemon)
+	playerctl        # Controle MPRIS de mídia (CLI)
+	polkit-elogind   # Daemon de autorização de privilégios
+	psmisc           # Utilitários de processo (CLI)
+	pulseaudio       # Servidor de áudio (daemon)
+	pulseaudio-utils # Utilitários CLI PulseAudio
+	pv
+	rsync
+	rtkit # Prioridade de tempo real (daemon)
+	sassc # Compilador SASS (CLI)
+	sed
+	socklog
+	socklog-void
+	tree
+	voidbr-base-config # Configuração base (arquivos)
+	voidbr-grub-theme
+	voidbr-nano-config # Configuração do nano (arquivos)
+	voidbr-utils       # Utilitários gerais VoidLinuxBR (CLI)
+	voidbr-vinstall
+	voidbr-webapps
+	wget
+	wifi-firmware
+	wireless_tools # Ferramentas legadas de wireless (CLI)
+	wireplumber    # Sessão PipeWire (daemon)
+	wpa_supplicant # Autenticação WPA/WPA2 (daemon)
+	xfsprogs
+	xz
+	zstd
 )
 backup=()
 
