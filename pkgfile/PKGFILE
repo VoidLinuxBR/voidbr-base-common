@@ -24,11 +24,11 @@ depends=(
 	bash-completion
 	bc
 	binutils
-	brightnessctl # Controle de brilho (CLI)
+	brightnessctl           # Controle de brilho (CLI)
 	chili-clonedisk
 	chili-utils
-	chrony
-	cpupower # Gerenciamento de CPU (CLI)
+	chrony                  # Versatile implementation of the Network Time Protocol (NTP)
+	cpupower                # Gerenciamento de CPU (CLI)
 	cryptsetup
 	curl
 	dbus
@@ -79,13 +79,14 @@ depends=(
 	nano
 	NetworkManager # Gerenciador de rede (daemon)
 	nvme-cli
-	optipng # Compressor PNG (CLI)
-	p7zip   # Suporte extra a compactados (CLI)
+	optipng         # Compressor PNG (CLI)
+	p7zip           # Suporte extra a compactados (CLI)
 	parallel
 	parted
 	pasystray
 	pavucontrol
 	pigz
+  rtkit            # Realtime Policy and Watchdog Daemon - Prioridade de audio em tempo real (daemon)
 	pipewire         # Servidor de áudio (daemon)
 	playerctl        # Controle MPRIS de mídia (CLI)
 	polkit-elogind   # Daemon de autorização de privilégios
@@ -94,8 +95,7 @@ depends=(
 	pulseaudio-utils # Utilitários CLI PulseAudio
 	pv
 	rsync
-	rtkit # Prioridade de tempo real (daemon)
-	sassc # Compilador SASS (CLI)
+	sassc            # Compilador SASS (CLI)
 	sed
 	socklog
 	socklog-void
@@ -153,6 +153,11 @@ pre_install() {
 }
 
 post_install() {
+	log "Ativando serviços"
+	vservice add dbus
+	vservice add rtkit
+	vservice add socklog-unix
+	vservice add chronyd
 	log "Finalizando instalação"
 }
 
