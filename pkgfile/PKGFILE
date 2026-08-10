@@ -156,6 +156,7 @@ pre_install() {
 
 post_install() {
 	log "Ativando serviços"
+  mkdir -p /var/service/
 	vservice add dbus --quiet
 	vservice add rtkit --quiet
 	vservice add socklog-unix --quiet
