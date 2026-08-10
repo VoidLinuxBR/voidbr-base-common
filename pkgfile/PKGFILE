@@ -156,11 +156,10 @@ pre_install() {
 
 post_install() {
 	log "Ativando serviços"
-  mkdir -p /var/service/
-	vservice add dbus --quiet
-	vservice add rtkit --quiet
-	vservice add socklog-unix --quiet
-	vservice add chronyd --quiet
+  ln -snf /etc/sv/dbus /etc/runit/runsvdir/default/dbus
+  ln -snf /etc/sv/rtkit /etc/runit/runsvdir/default/rtkit
+  ln -snf /etc/sv/socklog-unix /etc/runit/runsvdir/default/socklog-unix
+  ln -snf /etc/sv/chronyd /etc/runit/runsvdir/default/chronyd
 	log "Finalizando instalação"
 }
 
