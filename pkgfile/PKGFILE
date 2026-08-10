@@ -154,10 +154,10 @@ pre_install() {
 
 post_install() {
 	log "Ativando serviços"
-	vservice add dbus
-	vservice add rtkit
-	vservice add socklog-unix
-	vservice add chronyd
+	vservice add dbus --quiet
+	vservice add rtkit --quiet
+	vservice add socklog-unix --quiet
+	vservice add chronyd --quiet
 	log "Finalizando instalação"
 }
 
