@@ -59,6 +59,7 @@ depends=(
 	gvfs-cdda         # gvfs para CDs de áudio
 	gvfs-smb          # gvfs para SMB/Windows
 	htop              # Monitor de processos (TUI)
+	btop
 	inetutils         # Utilitários de rede (CLI)
 	intel-ucode
 	iptables
