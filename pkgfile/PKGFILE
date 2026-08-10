@@ -15,6 +15,7 @@ source=("git+${url}.git")
 md5sums=('SKIP')
 makedepends=()
 depends=(
+  bat
 	7zip                    # Compactador 7z (CLI)
 	acpi                    # Info de bateria/térmica (CLI)
 	acpid                   # Daemon ACPI
