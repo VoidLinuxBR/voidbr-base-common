@@ -116,7 +116,7 @@ depends=(
 	xfsprogs
 	xz
 	zstd
-	plymouth
+  voidbr-plymouth-theme
 	grc
 )
 backup=()
