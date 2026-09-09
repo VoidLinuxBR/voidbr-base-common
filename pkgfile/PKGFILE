@@ -61,7 +61,6 @@ depends=(
 	gvfs-smb          # gvfs para SMB/Windows
 	htop              # Monitor de processos (TUI)
 	btop
-	inetutils         # Utilitários de rede (CLI)
 	intel-ucode
 	iptables
 	iputils # Utilitários de rede/ping (CLI)
