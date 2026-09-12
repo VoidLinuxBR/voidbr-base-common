@@ -1,7 +1,7 @@
 # Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
 
 pkgname=voidbr-base-common
-pkgdesc="VoidBR TTY Meta Package"
+pkgdesc="VoidBR Base Meta Package"
 pkgver=$(date +%Y%m%d)
 pkgrel=$(date +%H%M)
 provides=()  # "eu SOU o $pkgname pkg1, pra quem depender deles"
@@ -15,109 +15,85 @@ source=("git+${url}.git")
 md5sums=('SKIP')
 makedepends=()
 depends=(
-  bat
-	7zip                    # Compactador 7z (CLI)
-	acpi                    # Info de bateria/térmica (CLI)
-	acpid                   # Daemon ACPI
-	alsa-pipewire           # ALSA sobre PipeWire
-	alsa-plugins-pulseaudio # Plugin ALSA/PulseAudio
-	alsa-utils              # Utilitários ALSA
 	bash-completion
+	7zip
+	acpi
+	acpid
 	bc
 	binutils
-	brightnessctl           # Controle de brilho (CLI)
+	brightnessctl
 	chili-clonedisk
 	chili-utils
-	chrony                  # Versatile implementation of the Network Time Protocol (NTP)
-	cpupower                # Gerenciamento de CPU (CLI)
+	chrony
+	cpupower
 	cryptsetup
 	curl
 	dbus
-	dbus-elogind # Message bus system (variante elogind)
+	dbus-elogind
 	dhcpcd
 	dialog
 	dracut
 	duf
 	efivar
   efibootmgr
-	elogind # Gerenciador de login e sessões
+	elogind
 	eza
 	fastfetch
-	ffmpeg     # Manipulação de áudio/vídeo (CLI)
-	fuse-exfat # Suporte a exFAT (driver)
+	ffmpeg
+	fuse-exfat
 	fzf
 	gettext
-	gnome-keyring # Gerenciador de senhas (daemon)
 	grep
 	limine
-  voidbr-limine-config
 	grub-btrfs-runit
 	grub-i386-efi
 	grub-terminus
 	grub-utils
-	gst-plugins-bad1  # Codecs GStreamer
-	gst-plugins-base1 # Codecs GStreamer (base)
-	gst-plugins-good1 # Codecs GStreamer
-	gst-plugins-ugly1 # Codecs GStreamer (restrito)
-	gvfs              # Sistema de arquivos virtual (daemon)
-	gvfs-cdda         # gvfs para CDs de áudio
-	gvfs-smb          # gvfs para SMB/Windows
-	htop              # Monitor de processos (TUI)
-	btop
+	htop
 	intel-ucode
 	iptables
-	iputils # Utilitários de rede/ping (CLI)
-	iw      # Configuração de dispositivos wireless (CLI)
+	iputils
+	iw
 	iwd
 	jfsutils
-	jq               # Processador JSON (CLI)
-	libjack-pipewire # JACK sobre PipeWire
-	libspa-bluetooth # Bluetooth para PipeWire
+	jq
 	linux-firmware
 	linux-firmware-amd
 	linux-firmware-intel
 	linux-firmware-network
-	lm_sensors # Sensores de temperatura (CLI)
-	lua55      # Linguagem de script (runtime)
+	lm_sensors
+	lua55
 	lvm2
 	nano
-	NetworkManager # Gerenciador de rede (daemon)
+	NetworkManager
 	nvme-cli
-	optipng         # Compressor PNG (CLI)
-	p7zip           # Suporte extra a compactados (CLI)
+	optipng
+	p7zip
 	parallel
 	parted
-	pasystray
-	pavucontrol
 	pigz
-  rtkit            # Realtime Policy and Watchdog Daemon - Prioridade de audio em tempo real (daemon)
-	pipewire         # Servidor de áudio (daemon)
-	playerctl        # Controle MPRIS de mídia (CLI)
-	polkit-elogind   # Daemon de autorização de privilégios
-	psmisc           # Utilitários de processo (CLI)
-	pulseaudio       # Servidor de áudio (daemon)
-	pulseaudio-utils # Utilitários CLI PulseAudio
+	psmisc
 	pv
 	rsync
-	sassc            # Compilador SASS (CLI)
+	sassc
 	sed
 	socklog
 	socklog-void
 	tree
-	voidbr-base-config # Configuração base (arquivos)
+	voidbr-base-config
 	voidbr-grub-theme
-	voidbr-nano-config # Configuração do nano (arquivos)
-	voidbr-utils       # Utilitários gerais VoidLinuxBR (CLI)
+	voidbr-nano-config
+	voidbr-utils
 	voidbr-vinstall
+  voidbr-plymouth-theme
+  voidbr-limine-config
 	wget
 	wifi-firmware
-	wireless_tools # Ferramentas legadas de wireless (CLI)
-	wireplumber    # Sessão PipeWire (daemon)
-	wpa_supplicant # Autenticação WPA/WPA2 (daemon)
+	wireless_tools
+	wpa_supplicant
 	xfsprogs
 	xz
 	zstd
-  voidbr-plymouth-theme
 	grc
 )
 backup=()
@@ -160,7 +136,6 @@ pre_install() {
 post_install() {
 	log "Ativando serviços"
   ln -snf /etc/sv/dbus /etc/runit/runsvdir/default/dbus
-  ln -snf /etc/sv/rtkit /etc/runit/runsvdir/default/rtkit
   ln -snf /etc/sv/socklog-unix /etc/runit/runsvdir/default/socklog-unix
   ln -snf /etc/sv/chronyd /etc/runit/runsvdir/default/chronyd
 	log "Finalizando instalação"
