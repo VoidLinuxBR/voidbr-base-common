@@ -106,7 +106,6 @@ depends=(
 	voidbr-nano-config # Configuração do nano (arquivos)
 	voidbr-utils       # Utilitários gerais VoidLinuxBR (CLI)
 	voidbr-vinstall
-	voidbr-webapps
 	wget
 	wifi-firmware
 	wireless_tools # Ferramentas legadas de wireless (CLI)
