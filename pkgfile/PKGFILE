@@ -49,6 +49,7 @@ depends=(
 	gettext
 	gnome-keyring # Gerenciador de senhas (daemon)
 	grep
+	limine
 	grub-btrfs-runit
 	grub-i386-efi
 	grub-terminus
