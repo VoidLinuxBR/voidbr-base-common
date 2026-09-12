@@ -39,6 +39,7 @@ depends=(
 	dracut
 	duf
 	efivar
+  efibootmgr
 	elogind # Gerenciador de login e sessões
 	eza
 	fastfetch
