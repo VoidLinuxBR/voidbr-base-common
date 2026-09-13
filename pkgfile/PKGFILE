@@ -29,14 +29,12 @@ depends=(
 	cryptsetup
 	curl
 	dbus
-	dbus-elogind
 	dhcpcd
 	dialog
 	dracut
 	duf
 	efivar
   efibootmgr
-	elogind
 	eza
 	fastfetch
 	ffmpeg
@@ -61,7 +59,6 @@ depends=(
 	linux-firmware-amd
 	linux-firmware-intel
 	linux-firmware-network
-	lm_sensors
 	lua55
 	lvm2
 	nano
