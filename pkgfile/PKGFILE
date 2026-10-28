@@ -38,7 +38,8 @@ depends=(
 	eza
 	fastfetch
 	ffmpeg
-	fuse-exfat
+  exfatprogs
+	exfaaaaaa
 	fzf
 	gettext
 	grep
