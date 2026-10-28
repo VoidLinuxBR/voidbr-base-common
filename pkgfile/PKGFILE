@@ -39,7 +39,6 @@ depends=(
 	fastfetch
 	ffmpeg
   exfatprogs
-	exfaaaaaa
 	fzf
 	gettext
 	grep
