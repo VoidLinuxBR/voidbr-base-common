@@ -48,7 +48,7 @@ depends=(
 	grub-terminus
 	grub-utils
 	htop
-	intel-ucode
+	iucode-tool
 	iptables
 	iputils
 	iw
